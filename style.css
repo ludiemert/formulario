@@ -1,0 +1,448 @@
+/*um reset nas regras do CSS*/
+* {
+    margin: 0; /*zera margem*/
+    padding: 0;
+    box-sizing: border-box; /*aplica em todos os elementos*/
+}
+
+/*-------------ROOT-----------*/
+:root /*transformar para rem tamanho flexivel */
+{
+    font-size: 62.5%;
+    /*10px
+    calculo 16px * 0,625 = 10px
+    entao se for 48px => 48 / 10 = 4.8rem
+    */
+}
+
+/*-------------BODY-----------*/
+body {
+    font-family: 'Poppins', sans-serif; /*fonte para todos das cx*/
+    /*font-family: 'Staatliches', cursive;*/
+    font-size: 1.6rem; /*flexivel */
+    background: hsla(202, 41%, 82%, 1);
+
+}
+
+/*colocar a faixa preta dentro do body, segunda cor no body*/
+ /* affter => é apos e o before => é antes*/
+ body::before {
+    content: '';  /*precisa colocar um conteudo*/
+    width: 100%; /*largura */
+    height: 46.3rem;  /*altura*/
+
+    background: #293241;
+
+    /* display: block; é um display block, ele empurra todos os elementos p bx*/
+    /*ou uso position: absolute, posicionamento absouluto 
+    na pagina  ele esta por cima das coisas e tem coisas por bx dele
+    o conteudo da pagina, ele fica sobreposto, */
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /*ele pega oque esta sobreposto do position e coloca 
+    na frente da tela*/
+    background-color: #52586f;
+
+    animation: topdown 900ms;
+
+    /*se quiser colocar uma imagem
+    background-image: url(https://miro.medium.com/max/1400/1*34-5tbanwB0yo0ccyP_7oA.jpeg) ;
+    background-repeat: no-repeat;
+    background-position: center ;
+    background-size: cover;
+    filter: brightness(50%) ; */
+   
+} /*faça a verificação no devtools(f12-html)*/
+
+/*-------------PAGE-----------*/
+.page {
+    max-width: 75rem; /*tamanho da caixa maior .page*/
+    margin: 0 auto; /*alinhado tudo ao centro da cx*/
+}
+
+/*-------------HEADER-----------*/
+
+header {
+    margin-top: 4rem;
+    max-width: 41.7rem;
+    color: #FFFFFF;
+}
+
+
+header h1 {
+    /*font-family: 'Staatliches', cursive; esta la em cima*/
+    /* font-weight: 700;  espessura da fonte */
+    font-size: 4.8rem; /*tamanho de 36*/
+    line-height: 6rem; /*espaçamento de lainehaite de 42*/
+
+    color: hsla(0, 0%, 100%, 1);
+    text-transform: uppercase;
+    /* border: 1px solid rgb(236, 14, 14);  para ver conceito de box-model*/
+    margin-bottom: 1.8rem; /*espaço entre o h1 e o p*/
+    /* margin-top: 100px; espaço da margem superior*/
+    
+}
+
+header p {
+    font-size: 20px;
+    line-height: 30px;
+    color: #FFFFFF;
+ 
+   /*border: 1px solid rgb(236, 14, 14);  para ver conceito de box-model*/
+    /*margin-bottom: 2px; espaço entre o p para a figura*/
+}
+
+header img {
+    /*border: 1px solid rgb(236, 14, 14);  para ver conceito de box-model*/
+    margin-bottom: 3rem; /*espaço entre a figura para a cx de bx*/
+    padding: 0 4.3rem;
+}
+
+/*-------------FORM-----------*/
+
+/*formulario*/
+form {
+    background: #FFFFFF;
+    border-radius: 0px 0px 20px 20px; /*curva somente em baixo em cima reto*/
+
+    margin-top: 5.8rem;
+    padding: 6.4rem; /*um espaçamento dentro do forme de todos os lados*/
+    min-height: 30rem;
+
+    /*espaçamento entre as caixas <fieldset> (informação do evento, privacidade, data e hora */
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem; /*espaço de uma caixa da outra*/
+
+    animation: downtop 700ms backwards;
+}
+
+
+fieldset {
+    border: none; /*tira a borda que o html cria em volta das (das 3cx) do formulario,  para aplicar para os 3 elementos*/
+}
+
+fieldset h2 {
+    font-size: 2.0rem;
+    line-height: 3.4rem;
+    margin-top: 1.6rem;
+
+    color: #535971;
+}
+
+
+/*agora voltamos com os espaçamentos das "cx" de uma div da outra */
+.fieldset-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.fieldset-wrapper legend { /*fonte das frases principais das cxs */
+    font-family: 'Staatliches', cursive;
+
+    font-size: 2.4rem;
+    line-height: 3.4rem;
+
+    color: #535971;
+
+    border-bottom: 1px solid #E6E6F0; /*linha em baixo das frases iniciais das caixas*/
+
+    width: 100%; /*ele é block e precisa pegar a linha toda do formulario*/
+    padding-bottom: 1.6rem; /*precisa de separação da bordinha do texto, é um preenchimento interno da cx*/
+}
+
+.input-wrapper-info {
+    display: flex;
+    gap: 2.2rem;
+}
+  
+.input-wrapper-info .info { 
+    display: flex;
+    flex-direction: column; /*ele pega 100% da linha na tela*/
+    width: 50%;
+} 
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column; /*ele pega 100% da linha na tela*/
+}
+
+.input-wrapper label,
+.input-wrapper-info label,
+.checkbox-wrapper label {
+    font-size: 1.4rem;
+
+    line-height: 2.4rem;
+    color: #4E4958;
+    margin-bottom: 8px;
+}
+
+/*agora funciona a distancia do texto e do texto span (margin-left: 12px)*/
+.input-wrapper span {
+    margin-left: 1rem;  /*distancia entre o texto e o span*/
+    font-size: 1.2rem;
+    line-height: 2rem;
+    color: #C1BCCC;
+}
+
+/*qdo passar o mouse em cima das escritas ( todos as tags do span <span>(somente números)</span>  ) vai ficar mais escuro (bom para acessibilidade) */
+.input-wrapper span:hover {
+    color: #636069;
+}
+
+.input-wrapper input, .input-wrapper-info input,
+#event-category, .input-wrapper feed
+{ /*caixa de texto 1* caixa, estao iguais no figma a caixa de input e de textarea, tambem da cx de seleção do select (nao colocar (,) no final para noa dar erro*/
+    
+    background: #FAFAFC; /*cor de fundo*/
+    /* Back / Lines in white */
+
+    height: 5.6rem; /*altura do imput (da cx)*/
+
+    border: 1px solid #545457; /*cor da borda*/
+    border-radius: 8px;/*arredondamento da borda*/
+
+    padding: 0 2.4rem; /*espaçamento da borda até a  escrita (dos lados 0 e espaço de 24px de espaço)*/
+
+    /*box-sizing: border-box;*/
+    
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    color: #4a494e;
+
+    /*essa regra coloco no inicio da pagina
+    box-sizing: border-box; calculo do tamanho da caixa apartir da borda, Sem border box ele conta o tamanho que colocar
+    width: 200px; esse 200 será aplicado para as bordas. A caixa principal é 200, pading de 100 ficou para cx e oque sobrou fica para o conteudo.
+    se usar acima a tag (box-sizing: content-box) tamanho do conteudo da  cx é 200 (box-sizing: content-box=> o content-box é o tamanho do conteudo 200) 
+    padding-left: 100px;tamanho */
+}
+
+/*
+.input-wrapper select  {
+    width: 47.5%; /* tamanho da cx de seleção*
+    height: 55px;
+    top: 821px;
+    left: 400px;
+    border-radius: 8px;
+       
+} */
+
+/*uma caixa do lado da outra para nome e sobre nome*/
+
+
+
+/*ajuste fino no .input-wrapper textarea (caixa para escrever grande do projeto)*
+.input-wrapper textarea {
+    padding: 0 24px; /*espaçamento da borda até a  escrita (dos lados 0 e espaço de 24px de espaço)*
+    height: 168px;/*altura da cx de texto*/
+    /*width: 608px; ficaria uma caixa pequena para escrever *
+} */
+
+/*tirar a setinha do lado da tag selection (seleção do lado)*/
+/*.input-wrapper select {
+     appearance: none; tira a seta do lado da cx de seção*
+}
+
+    /*outros navegadores usar-se outras tags: (motores por tras dos navegadores, por tras trabalhando com o CSS */
+        /*-moz-appearance: none; mozila, ja não precisa mais olhando no site (https://caniuse.com/)
+     -webkit-appearance: none; /*chome ou safari*/
+        /*-ms-appearance: none;microsoftja não precisa mais olhando no site (https://caniuse.com/)*/
+    /*com o tempo nao precisara desse prefixo somente o appearance: none; para todos os navegadores*/
+
+    /*o projeto html precisa dessa seta para, entao ela será projetada fora desse padrão, entao buscamos como fazer a seta no:
+     https://yoksel.github.io/url-encoder (o programa faz tudo p gente sem precisar fazer na mao ex transf SVG em texto)/*/
+
+     /* VER ISSO: 
+     background-image: url("data:image/svg+xml,%0A%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 10L12 14L16 10' stroke='%239C98A6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+     /*ele fica repetindo no fundo da tela toda, a imagem está formatada como base64 como um texto (o programa faz tudo p gente sem precisar fazer na mao ex transf SVG em texto)
+         background-repeat: no-repeat;  regras para esse background, nao ficar repetindo no fundo da tela
+         background-position: right 24px top 50%;/*colocar ele no canto da caixa 24px de espaço final, e top center centralizado ou 50%
+ 
+ } */
+
+ /*-------------Dia e Hora-----------*/
+
+ /*parte do dia e hora*/
+.col-3 {
+    display: flex;
+    gap: 2rem;
+
+}
+
+/*no primeiro div (div:nth-child(1) dessas 3 colunas do dia e hora. Numero do filho da div que eu quero. quero a div de Data. */
+.col-3>div:nth-child(1) { /*a seta > quer dizer que fica somente nessa div (1) senao tiver a seta ele aplica para todos*/
+
+    width: 100%;
+}
+
+/*de até time*/
+.col-3 .info-time {
+    display: flex;
+    gap: 1rem;
+}
+
+/*
+.col-3 > div:nth-child(2),
+.col-3 > div:nth-child(3)
+ { /*a seta > quer dizer que fica somente nessa div (1) senao tiver a seta ele aplica para todos*
+
+    width: 25%;
+} */
+
+
+
+
+/*.checkbox-wrapper, ficou torto porque ele pega a margem que tem em baixo do label, p arrumar*/
+.checkbox-wrapper label { /*para aparecer e alinha as tags do .checkbox-wrapper label::before { *
+    margin: 0; /*alinhar a escrita com a caixa de seleção*/
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+}
+
+/*para sumir o botao de check e eu colocar outro*/
+.checkbox-wrapper input { /*ao fazer isso perde a acessibilidade com o tab do declado para ir para o proximo evento, entao NÃO PODE DEIXAR (display: none;) *
+    display: none;
+    /*tira ele e colocar .checkbox-wrapper:relative;*/
+
+    /*ele vai receber um absolute */
+    position: absolute; /*ele vai p cima do outro */
+
+    /*deixa ele do mesmo tamanho para nao aparecer e ficar igual e dar acessibilidade */
+    width: 2.4rem;
+    height: 2.4rem;
+    
+    opacity: 0; /*para ele nao ficar aparecendo*/
+}
+
+.checkbox-wrapper {
+    position: relative; /*ele relativa o absoluto por isso fica uma caixa em cima da outra*/
+}
+
+/*adicionar um elemento atraves do CSS, colocar uma figura no checkbox  (configurar a bolinha de checkbox)*/
+.checkbox-wrapper label::before {
+    content: '';
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 8px;
+    border: 1px solid #E6E6F0;
+
+    /*aparecer a caixa criada acima*/
+    display: block;
+
+}
+
+/*fazer a ação de funcionamento do botão de checkbox (acionar), pegando as duas funcionalidades (.checkbox-wrapper input:checked + label::before )*/
+.checkbox-wrapper input:checked + label::before {
+
+    /* background: red; *ele deixa a caixa vermelha sem o V de check, fazer alterações */
+
+    /*fazer o copy .SVG na figura (https://yoksel.github.io/url-encoder/ ) coloca essa copia aqui dentro */
+    background-image: url("data:image/svg+xml,%3Csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='1' y='1' width='24' height='24' rx='8' fill='%23FAFAFC' stroke='%23E6E6F0'/%3E%3Cpath d='M10 17.17L5.83 13L4.41 14.41L10 20L22 8L20.59 6.59L10 17.17Z' fill='%2342D3FF'/%3E%3C/svg%3E%0A");
+     /*para colocar o v dentro da cx tem que copiar o .svg do figma e ir no site https://yoksel.github.io/url-encoder/ copia o CSS da pagina do svg que vc colocou la em cima*/
+     /*peguei do projeto de (Stage 03 - Avançando no HTML e CSS)*/
+}
+
+/*fazer out-line aparecer para acessibilidade com o TAB aparecer que o tab esta em cima do item */
+.checkbox-wrapper input:focus + label::before {
+    outline: 2px solid black;/*igual ao border */
+}
+
+
+ /*-------------FOOTER-----------*/
+ /*classe button, botao salvar evento*/
+footer .button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 40px;
+    gap: 1rem;
+
+    margin-top: 3.3rem; /*espaço acima*/
+    margin-bottom: 4.3rem; /*espaço abaixo*/
+
+    width: 100%;
+    height: 5.1rem;
+
+    border: none;
+
+    background: #F67669;
+    border-radius: 8px;
+    
+    /*fonte*/
+    font-family: 'Staatliches';
+
+    font-weight: 400;
+    font-size: 2.0rem;
+    line-height: 2.6rem;
+    color: #FFFFFF;
+
+    /*borda no topo do footer botao 
+    border-top: 2px solid  #FFFFFF; */
+}
+
+/*estado de hover no botão => qdo eu passar o mouse em cima ele fazer algo*/
+footer .button:hover { /*passando o mouse em cima do elemento*/
+    background: #bb1869;
+
+}
+
+/*simular uma borda vermelha no campo que eu colocar como obrigatorio (required /> esse exemplo no html)*/
+/*sudoclass => input:invalid,  .button:hover ,  input:checked (servem para ver o estado dos seus elementos, estado de check, de invalido,
+passando o mouse em cima do elemento (hover) */
+input:invalid {
+    border: 2px solid #FF1010;
+}
+
+ /*-------------Tamanho da nossa tela-----------*/
+   /*apartir de 640px ele começa a aplicar os estilos abaixo com 40em*/
+/*media queries */
+@media (max-width: 700px) {
+    body:before{
+      background-position: center;
+      
+    }
+    header {
+        text-align: center;
+    } 
+
+    .page {
+        margin: 0 2rem;
+    }
+
+    form {
+        padding: 3rem;
+    }
+
+    .input-wrapper-info input {
+        width: 100%;
+    }
+   
+    }
+    
+    @keyframes topdown{
+        0% {
+          opacity: 0;
+          transform: translateY(-150px);
+        }
+      
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+    }
+    
+    @keyframes downtop {
+      0% {
+        transform: translateY(400px);
+      }
+    
+      100% {
+        transform: translateY(0);
+      }
+    }
