@@ -7,15 +7,14 @@
  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario_01_Lu</title>
-    <link rel="stylesheet" href=".//style.css">
+    <link rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Staatliches&display=swap" rel="stylesheet">
 
 </head>
 <body>
 
-    <!--criar a div por que tem uma cx dentro do header-->
     <div class="page">
-        <header> <!--cabeçalho (vai receber h1 e p )-->
+        <header> 
             <h1>avalie a sua mentoria</h1>
             <p>Chegou a hora de avaliar o seu mentor. Bora lá?</p>
 
@@ -24,14 +23,8 @@
 
         </header>
 
-        <form id="my-form"> <!--1 – formulário com vários input. esse id é para enviar futuramento (front end) -->
-
-            <!-- estrutura chamada fildset-->
-    
-            <!--Informações do Evento - 1 caixa-->
-
-            <fieldset> <!--uma tag de agrupamento de campos => fild é campo e set é conjunto.-->
-
+        <form id="my-form"> 
+            <fieldset> 
                 <div class="fieldset-wrapper">
                     <legend>Informações pessoais</legend>
           
@@ -51,114 +44,53 @@
                       <label for="info-email">Email <span>(digite um email válido)</span></label>
                       <input type="email" id="info-email" required>
                     </div>
-
-                    <!--
-                <div class="fieldset-wrapper"> !--como tem um bug no Chrome qdo coloca-se o display:flex, precisa colocar essa classe o fieldset-wrapper e colocar as div dentro dessa caixa--
-                    <legend> !--uma legenda para esse conjunto de campos--
-                        Informações pessoais
-                    </legend>!-- ele vem com estilização padrao, do navegador--
-
-                    <div class="info"> 
-               !-- agrupar elementos, fica melhor para trabalhar--
-                <div class="input-wrapper-info"> !-- encapisulando coisas, formato de classe--
-                    <label for="event-nome">Nome</label> !-- ele esta agrupando (nome do evento)--
-                    <input type="text"
-                    id="event-nome"
-                    required /> !--fica campo obrigatorio no formoulario--
-                </div> 
-
-                !--replicar os demais eventos--
-                <div class="input-wrapper"> !-- encapisulando coisas, formato de classe--
-                    <label for="event-sobrenome">Sobrenome</label> !-- ele esta agrupando (nome do evento)--
-                    <input type="text"
-                    id="event-sobrenome"
-                    required /> 
-                </div>
-                    </div> !--fecha a div do info--
-
-                !--replicar os demais eventos--
-                <div class="input-wrapper"> !-- encapisulando coisas, formato de classe--
-                    <label for="event-email">Email<span>(digite um email válido)</span>!-- ele esta agrupando 
-                        (titulo do evento)--</label> -- ele esta agrupando (nome do evento)--
-                    <input type="text"
-                    id="event-email"
-                    required  />
-                </div>
-                    
-            </div> !-- div da fieldset-->
             </fieldset>
 
-             <!-- agrupamento de novos campos, agrupamento do PRIVACIDADE (2 caixa)-->
-             <fieldset> <!--uma tag de agrupamento de campos => fild é campo e set é conjunto.-->
-                <div class="fieldset-wrapper"><!--como tem um bug no chrome qdo coloca-se o display:flex, precisa colocar essa classe o 
-                    fieldset-wrapper e colocar as div dentro dessa caixa-->
-                    <legend><!--uma legenda para esse conjunto de campos--> Informações do mentor</legend>
-                    <!--Privacidade do evento.  ele vem com estilização padrao, do navegador-->
-                
-                    <!--vamos para o proximo campo do select, categoria do formulario--> 
+             <fieldset> 
+                <div class="fieldset-wrapper">
+                    <legend> Informações do mentor</legend>
                     <div class="input-wrapper">
                         <label for="event-category">Selecione quem foi o seu mentor<!-- ele esta agrupando (titulo do evento), sem a tag span--></label> 
-                        <select id="event-category"><!--O ID TEM QUE SER O MESMO DO FOR.entrada de texto na cx do tipo number (input type="number").
-                            Como nao vai enviar para lugar nenhum fecha ele aqui /> nao precisa de name--> 
-                       <!--as opções dessa categoria, as opções dentro da cx para escolher-->
-                       <option value="">Luiz Silva Aparecido</option> <!--opções da cx de texto-->
-                       <option value="ingles">Claudia Reis da Costa</option> <!--opções da cx de texto-->
-                       <option value="portugues">Paulo Queiros Sanches</option> <!--opções da cx de texto-->
-                       <option value="historia">Maria Oliver de Fatima</option> <!--opções da cx de texto-->
+                        <select id="event-category">
+                        
+                       <option value="">Luiz Silva Aparecido</option> 
+                       <option value="ingles">Claudia Reis da Costa</option>
+                       <option value="portugues">Paulo Queiros Sanches</option> 
+                       <option value="historia">Maria Oliver de Fatima</option> 
                         </select>
-                    </div> <!--div dessa seleção-->
+                    </div> 
 
-
-                    <!--replicar os eventos de inf extras-->
-                    <div class="input-wrapper"> <!-- encapisulando coisas, formato de classe-->
-                        <label for="event-info">Feedback sobre o mentor (máximo 100 caracter)<!-- ele esta agrupando (titulo do evento)sem a tag span-->
+                    <div class="input-wrapper">
+                        <label for="event-info">Feedback sobre o mentor (máximo 100 caracter)
                          </label> 
                             <input type="text" id="event-info" required maxlength="100">
                            
-                        <!--
-                        <textarea 
-                        id="event-info"
-                        required
-                        maxlength="1500"></textarea>--O ID TEM QUE SER O MESMO DO FOR.ele agora é entrada de texto na cx (textarea).
-                        Como nao vai enviar para lugar nenhum fecha ele aqui /> nao precisa de name-->
                     </div>
 
-
-                    <!--Para fazer o evento do projeto (figma) Evento privado-->
-                    <div class="checkbox-wrapper"> <!-- encapisulando coisas, formato de classe-->
-                        <input type="checkbox" id="event-private" /> <!--aqui vc seleciona se quiser evento privado, ele vem primeiro na tela do projeto-->
-                        <label for="event-private">Todas as minhas dúvidas foram esclarecidas durante a mentoria.<!-- ele esta agrupando (titulo do evento)--></label> <!--ele faz seleção qdo coloco cor e ele aparece no html esse for-->
+                    <div class="checkbox-wrapper"> 
+                        <input type="checkbox" id="event-private" /> 
+                        <label for="event-private">Todas as minhas dúvidas foram esclarecidas durante a mentoria.
                     </div>
-
-                </div> <!-- div da fieldset-->
+                </div> 
              </fieldset>
 
-             <!-- agrupamento de novos campos, agrupamento do DIA E HORA (3 caixa)-->
+             <fieldset>
+                <div class="fieldset-wrapper"> 
+                <legend> Agendando próxima mentoria </legend> 
 
-             <fieldset><!--uma tag de agrupamento de campos => fild é campo e set é conjunto.-->
-                <div class="fieldset-wrapper"> <!--como tem um bug no chrome qdo coloca-se o display:flex, precisa colocar essa classe o 
-                    fieldset-wrapper e colocar as div dentro dessa caixa-->
-                <legend> Agendando próxima mentoria </legend> <!--Privacidade do evento.  
-                    ele vem com estilização padrao, do navegador--> 
+                      <div class="col-3">  
 
-                    
-                      <!--subagrupamento das 3 informações de dia e hora-->
-                      <div class="col-3">  <!--div das 3 colunas-->
-
-                        <!--data => date-->
-                      <div class="input-wrapper"> <!-- encapisulando coisas, formato de classe-->
-                        <label for="info-date">Data<span>(DD/MM/AAAA)</span><!-- ele esta agrupando (titulo do evento)--></label>
-                        <input type="date" id="info-date"  required /><!--entrada de texto na cx. Como nao vai enviar para lugar nenhum fecha ele aqui />-->
+                        <div class="input-wrapper">
+                        <label for="info-date">Data<span>(DD/MM/AAAA)</span></label>
+                        <input type="date" id="info-date"  required />
                       </div>
 
-                       <!--inicio => begin--> 
                        <div class="info-time">
-                       <div class="input-wrapper"> <!--encapsulando coisas em formato de classes-->
-                        <label for="info-begin">Das</label> <!--horario que começa-->
-                        <input type="time" id="info-begin" required /><!--entrada de texto na cx. Como nao vai enviar para lugar nenhum fecha ele aqui />-->
+                       <div class="input-wrapper"> 
+                        <label for="info-begin">Das</label> 
+                        <input type="time" id="info-begin" required />
                        </div> 
 
-                       <!--end-->
                        <div class="input-wrapper"> 
                         <label for="info-end">Até</label>
                         <input type="time" id="info-end" required />
@@ -170,14 +102,12 @@
             
         </form>
 
-            <!-- fazer botao para salvar o evento, como rodapé-->
-            <!--no projeto o button esta dentro do form-->
             <footer>
                 <input
                 class="button"
                 type="submit"
                 form="my-form"
-                value="Salvar"> <!-- esse form é o id do formulario, ele procura na pagina e dispara esse formulario para o front end-->
+                value="Salvar"> 
             </footer>
         
     </div>
